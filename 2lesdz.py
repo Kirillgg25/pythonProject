@@ -8,26 +8,34 @@ class Student:
         self.gladness = 58
         self.progress = 8
         self.alive = True
-        self.mone = 50
+        self.mone = 20
 
     def to_study (self):
         print("Time to study")
         self.progress += 0.12
         self.gladness -= 3
-    def to_sleep(self):
-        print("I will sleep")
-        self.gladness += 3
+        if self.progress >= 8:
+            self.work()
+        elif self.mone >= 40:
+            self.progress += 0.2
+            self.mone -= 15
+    # def to_sleep(self):
+    #     print("I will sleep")
+    #     self.gladness += 3
     def to_chill(self):
         print("Rest time")
-        self.gladness += 5
-        self.progress -= 0.1
-        self.mone -= 5
+        if self.gladness <= 50:
+            self.gladness += 5
+            self.progress -= 0.1
+            self.mone -= 5
+        else:
+            self.to_study()
 
     def work(self):
         print("The work is done")
         self.gladness -= 1
-        self.progress -= 0.2
-        self.mone += 5
+        self.progress -= 0.1
+        self.mone += 7
 
     def is_alive(self):
         if self.progress < -0.5:
@@ -36,7 +44,7 @@ class Student:
         elif self.gladness <= 0:
             print("Depression...")
             self.alive = False
-        elif self.progress > 5:
+        elif self.progress < 5:
             print("Passed externally...")
             self.alive = False
         elif self.mone <= -50:
@@ -50,14 +58,14 @@ class Student:
     def live(self, day):
         day = "Day" + str(day) + "of" + self.name + "life"
         print(f"{day:=^50}")
-        live_cube = random.randint(1, 4)
+        live_cube = random.randint(1, 3)
         if live_cube == 1:
             self.to_study()
+        # elif live_cube == 2:
+        #     self.to_sleep()
         elif live_cube == 2:
-            self.to_sleep()
-        elif live_cube == 3:
             self.to_chill()
-        elif live_cube == 4:
+        elif live_cube == 3:
             self.work()
         self.end_of_day()
         self.is_alive()
