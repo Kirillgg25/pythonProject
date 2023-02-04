@@ -15,6 +15,36 @@ class Human:
     def get_car(self):
         self.car = Auto(brands_of_car)
 
+    def date(self):
+        if self.car.drive():
+            pass
+        else:
+            if self.car.fuel < 20:
+                self.shopping("fuel")
+                return
+            else:
+                self.to_repair()
+                return
+
+        if self.money >= 70:
+            self.money -= 60
+            self.satiety += 10
+            self.gladness += 5
+        else:
+            pass
+
+    def relatives(self):
+        if self.car.drive():
+            pass
+        else:
+            if self.car.fuel < 20:
+                self.shopping("fuel")
+                return
+            else:
+                self.to_repair()
+                return
+        self.money -= 10
+        self.gladness += 5
 
     def get_job(self):
         if self.car.drive():
@@ -67,12 +97,12 @@ class Human:
             self.home.food += 50
         elif manage == "delicacies":
             print("Hooray! Delicious!")
-            self.gladness += 10
+            self.gladness += 5
             self.satiety += 2
             self.money -= 15
 
     def chill(self):
-        self.gladness += 10
+        self.gladness += 5
         self.home.mess += 5
 
     def clean_home(self):
@@ -125,7 +155,7 @@ class Human:
             print(f"I don't have a job, I'm going to get a job "
                   f"{self.job.job} with salary {self.job.salary}")
         self.days_indexes(day)
-        dice = random.randint(1, 4)
+        dice = random.randint(1, 6)
         if self.satiety < 20:
             print("I'll go eat")
             self.eat()
@@ -155,6 +185,12 @@ class Human:
         elif dice == 4:
             print("Time for treats!")
             self.shopping(manage="delicacies")
+        elif dice == 5:
+            print("Went to relatives")
+            self.relatives()
+        elif dice == 6:
+            print("I'm going on a date")
+            self.date()
 
 brands_of_car = {
     "BMW":{"fuel":100, "strength":100, "consumption": 6},
@@ -203,6 +239,6 @@ class Job:
         self.gladness_less=job_list[self.job]["gladness_less"]
 
 nick = Human(name="Nick")
-for day in range(1,800):
+for day in range(800):
     if nick.live(day) == False:
         break
