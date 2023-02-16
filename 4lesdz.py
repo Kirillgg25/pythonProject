@@ -1,19 +1,19 @@
 import random
 
 
-class mom():
+class Mom():
     agem = 45
     hairm = "Blec"
     eyesm = "Blue"
     floorm = "Woman"
 
-class dad():
+class Dad():
     aged = 52
     haird = "Brown"
     eyesd = "Grey"
     floord = "Man"
 
-class child(dad, mom):
+class Child(Dad, Mom):
 
     def ifo(self):
         self.floor = random.randint(1, 2)
