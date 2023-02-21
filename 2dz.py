@@ -1,3 +1,3 @@
 a = int(input("Число - "))
-d = int(input("Степень - "))
-print(a ** d)
+d = int(input("Ступінь - "))
+print(f"Відповідь - {a ** d}")
