@@ -1,16 +1,30 @@
-# This is a sample Python script.
+result = []
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def divider(a, b):
 
+   if a < b:
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+       raise ValueError
 
+   if b > 100:
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+       raise IndexError
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+   return a/b
+
+data = {10: 2, 2: 5, 123: 4, 18: 0,  4: 15, 8 : 4}
+
+for key in data:
+
+   try:
+
+       res = divider(key, data[key])
+
+       result.append(res)
+
+   except Exception as err:
+
+       print(type(err))
+
+print(result)
+
