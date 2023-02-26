@@ -22,4 +22,4 @@ if a == 1:
     print(dol * d)
 elif a == 2:
     uah = int(input("Гривны"))
-    print(uah * b)
+    print(uah / b)
