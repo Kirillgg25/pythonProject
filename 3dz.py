@@ -1,3 +1,10 @@
-names = ['Arina', 'Kirilo', 'Margarita', 'Zahar', 'Sofi', 'Roman', 'Olga', 'Diana', 'Rostislav']
-misce = names[0]+" cидить з "+names[1]
-print(misce)
+a = int(input("Рекомендують спати не менше (годин) "))
+b = int(input("Рекомендують спати не більше (годин) "))
+c = int(input("Зараз спить (годин) "))
+if c < b:
+    if c > a:
+        print("Добре")
+    else:
+        print("Недосип")
+else:
+    print("Пересип")
