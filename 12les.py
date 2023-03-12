@@ -1,8 +1,8 @@
 import cv2
 from PIL import Image
-image_path = 'kot_pusik.jpeg'
+image_path = 'i700.jpg'
 cat_face_cascade = cv2.CascadeClassifier\
-    ('haarcascade_frontalcatface_extended.xml')
+    ('haarcascade_frontalface_alt.xml')
 image = cv2.imread(image_path)
 cat_face = cat_face_cascade.detectMultiScale(image)
 cat = Image.open(image_path)
