@@ -1,8 +1,7 @@
-n = input("Ведите число - ")
-m = input("Ведите число - ")
-v = input("Ведите число - ")
-w = input("Ведите число - ")
-a = input("Ведите число - ")
-d = [n, m, v, w, a]
-print(max(d))
-print(min(d))
+a = []
+x = input("Ведите число ")
+while x != 'stop':
+    a.append(int(x))
+    x = input("Ведите число ")
+print(max(a))
+print(min(a))
